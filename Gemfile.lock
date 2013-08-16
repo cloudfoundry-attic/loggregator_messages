@@ -1,0 +1,17 @@
+PATH
+  remote: .
+  specs:
+    loggregator_messages (0.0.1.pre)
+      beefcake (~> 0.3.7)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    beefcake (0.3.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.3)
+  loggregator_messages!
