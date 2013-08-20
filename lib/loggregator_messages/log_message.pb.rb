@@ -20,13 +20,7 @@ class LogMessage
   required :message, :bytes, 1
   required :message_type, LogMessage::MessageType, 2
   required :timestamp, :sint64, 3
-  required :app_id, :string, 4
+  optional :app_id, :string, 4
   required :source_type, LogMessage::SourceType, 5
   optional :source_id, :string, 6
-  optional :space_id, :string, 7
-  required :organization_id, :string, 8
-
-  def message_type_name
-    {MessageType::OUT => 'STDOUT', MessageType::ERR => 'STDERR'}[message_type]
-  end
 end
