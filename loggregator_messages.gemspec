@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["cf-eng@pivotallabs.com"]
   spec.description   = "Library for all of the protocol buffer messages."
   spec.summary       = spec.description
-  spec.homepage      = ""
+  spec.homepage      = "http://github.com/cloudfoundry/loggregator_messages"
   spec.license       = "Apache 2.0"
 
   spec.files         = `git ls-files`.split($/)
