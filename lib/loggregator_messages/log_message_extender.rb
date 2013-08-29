@@ -4,10 +4,10 @@ class LogMessage
   end
 
   def source_type_name
-    {SourceType::CLOUD_CONTROLLER => 'CloudController',
-     SourceType::ROUTER => 'Router',
-     SourceType::UAA => 'UAA',
-     SourceType::DEA => 'DEA',
-     SourceType::WARDEN_CONTAINER => 'WardenContainer',}[source_type]
+    {SourceType::CLOUD_CONTROLLER => 'CF[CC]',
+     SourceType::ROUTER => 'CF[Router]',
+     SourceType::UAA => 'CF[UAA]',
+     SourceType::DEA => 'CF[DEA]',
+     SourceType::WARDEN_CONTAINER => 'App',}[source_type]
   end
 end

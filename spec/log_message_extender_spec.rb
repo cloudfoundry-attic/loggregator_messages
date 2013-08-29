@@ -38,7 +38,7 @@ describe LogMessage do
               :source_type => 1
           })
 
-      expect(msg.source_type_name).to eq("CloudController")
+      expect(msg.source_type_name).to eq("CF[CC]")
     end
 
     it "returns Router for type == 2" do
@@ -50,7 +50,7 @@ describe LogMessage do
               :source_type => 2
           })
 
-      expect(msg.source_type_name).to eq("Router")
+      expect(msg.source_type_name).to eq("CF[Router]")
     end
     it "returns UAA for type == 3" do
       msg = LogMessage.new(
@@ -61,7 +61,7 @@ describe LogMessage do
               :source_type => 3
           })
 
-      expect(msg.source_type_name).to eq("UAA")
+      expect(msg.source_type_name).to eq("CF[UAA]")
     end
     it "returns DEA for type == 4" do
       msg = LogMessage.new(
@@ -72,7 +72,7 @@ describe LogMessage do
               :source_type => 4
           })
 
-      expect(msg.source_type_name).to eq("DEA")
+      expect(msg.source_type_name).to eq("CF[DEA]")
     end
     it "returns WardenContainer for type == 5" do
       msg = LogMessage.new(
@@ -83,7 +83,7 @@ describe LogMessage do
               :source_type => 5
           })
 
-      expect(msg.source_type_name).to eq("WardenContainer")
+      expect(msg.source_type_name).to eq("App")
     end
   end
 end
