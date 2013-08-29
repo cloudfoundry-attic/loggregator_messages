@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "loggregator_messages"
-  spec.version       = '0.0.1.pre'
+  spec.version       = '0.0.2.pre'
   spec.authors       = ["Pivotal"]
   spec.email         = ["cf-eng@pivotallabs.com"]
   spec.description   = "Library for all of the protocol buffer messages."
