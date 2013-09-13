@@ -11,10 +11,8 @@ class LogMessage
      SourceType::WARDEN_CONTAINER => 'App',}[source_type]
   end
 
-  def timestamp=(timestamp)
-    timestamp ||= Time.now
-    t = timestamp.is_a?(Time) ? timestamp : Time.at(timestamp.to_f)
-    @timestamp = (t.tv_sec * 1000000000) + t.tv_nsec
+  def time=(time)
+    self.timestamp = (time.tv_sec * 1000000000) + time.tv_nsec
   end
 
   def time

@@ -87,46 +87,26 @@ describe LogMessage do
     end
   end
 
-  describe "#timestamp=" do
-    it "defaults to Time.now" do
-      msg = LogMessage.new
-
-      expect(Time.at(msg.timestamp/1000000000.0)).to be_within(0.5).of(Time.now)
-    end
-
+  describe "#time=" do
     it "takes a time object" do
       msg = LogMessage.new
-      msg.timestamp = Time.utc(2010, 1, 20, 19, 18, 17.654321011)
+      msg.time = Time.utc(2010, 1, 20, 19, 18, 17.654321011)
 
       expect(msg.timestamp).to eq 1264015097654321011
-    end
-
-    it "takes a time in seconds since the epoch" do
-      msg = LogMessage.new
-      msg.timestamp = 1379087263
-
-      expect(msg.timestamp).to eq 1379087263000000000
-    end
-
-    it "takes a time in fractional seconds since the epoch" do
-      msg = LogMessage.new
-      msg.timestamp = 1379087263.654321
-
-      expect(msg.timestamp).to eq 1379087263654320955
     end
   end
 
   describe "#time" do
     it "returns a time object" do
       msg = LogMessage.new
-      msg.timestamp = 1379087263
+      msg.timestamp = 1264015097654321011
 
       expect(msg.time).to be_a Time
     end
 
     it "returns a time object with nanosecond precision" do
       msg = LogMessage.new
-      msg.timestamp = Time.utc(2010, 1, 20, 19, 18, 17.654321011)
+      msg.timestamp = 1264015097654321011
 
       expect(msg.time.tv_nsec).to eq 654321011
     end
