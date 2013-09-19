@@ -1,14 +1,16 @@
 class LogMessage
   def message_type_name
-    {MessageType::OUT => 'STDOUT', MessageType::ERR => 'STDERR'}[message_type]
+    {MessageType::OUT => "STDOUT", MessageType::ERR => "STDERR"}[message_type]
   end
 
-  def source_type_name
-    {SourceType::CLOUD_CONTROLLER => 'CF[CC]',
-     SourceType::ROUTER => 'CF[Router]',
-     SourceType::UAA => 'CF[UAA]',
-     SourceType::DEA => 'CF[DEA]',
-     SourceType::WARDEN_CONTAINER => 'App',}[source_type]
+  def source_name(id = nil)
+    id_string = id ? "/#{id}" : ""
+
+    {SourceType::CLOUD_CONTROLLER => "CF[CC#{id_string}]",
+     SourceType::ROUTER => "CF[Router#{id_string}]",
+     SourceType::UAA => "CF[UAA#{id_string}]",
+     SourceType::DEA => "CF[DEA#{id_string}]",
+     SourceType::WARDEN_CONTAINER => "App#{id_string}",}[source_type]
   end
 
   def time=(time)
